@@ -8,7 +8,7 @@ Usage
 
 Basic Usage
 -----------
-
+[code]
 $ = require('moohlah')();
 
 $.register('split',function(arg) {
@@ -22,7 +22,7 @@ $('blank plank').split(' ');
 $(['blank','plank']).split('a');
 
 //results in ['bl','nk','pl']
-
+[/code]
 
 Just like in jquery duplicates are removed.
 
