@@ -29,9 +29,9 @@ Just like in jquery duplicates are removed.
 How is this different than just using jqueries $.fn.func = ...
 
 The behind the scenes of jquery is not as sophisticated as some might suspect.
-The result of every jquery call producing a set with only unique elements is not actually a featcher of jquery.  Jquery developers have just done a really good job writing each of the standard functions so that they only return sets.  They have taken the hard way to develop jquery making it more difficult for you to add on to it.
+The result of every jquery call producing a set with only unique elements is not actually a feature of jquery.  Jquery developers have just done a really good job writing each of the standard functions so that they only return sets.  They have taken the hard way to develop jquery making it more difficult for you to add on to it.
 
-When we write a function for $.fn the argument we get the the function(arg) is really just the list we were working with on the outside.  Jquery doesn't do anything to break the elements up for you, concatonate results, and remove duplicates and empty elements.
+When we write a function for $.fn the this object we get for the function is really just the list we were working with on the outside.  Jquery doesn't do anything to break the elements up for you, concatonate results, and remove duplicates and empty elements.
 
 In jquery the above function would have been properly written:
 
