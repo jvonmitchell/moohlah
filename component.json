@@ -3,7 +3,7 @@
   "repo": "jvonmitchell/moohlah",
   "description": "Like JQuery, but works on more than DOM elements",
   "demo": "",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "moohlah.js",
   "license": "LGPLv3",
   "keywords": [

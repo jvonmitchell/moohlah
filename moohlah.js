@@ -1,5 +1,5 @@
 //Depends on underscore to make arrays into sets and to drop empty items
-var underscore = require('underscore');
+var underscore = require('lodash');
 
 //Calling this function will return the $ library.  You can initiat that instance of the library with a functions list and those functions will be preregistered with that instance of the library.
 module.exports = $maker = (function(functions) {
