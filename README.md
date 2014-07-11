@@ -8,11 +8,13 @@ Usage
 
 Basic Usage
 -----------
-[code]
+
 $ = require('moohlah')();
 
 $.register('split',function(arg) {
+
  return this.split(arg);
+ 
 });
 
 $('blank plank').split(' ');
@@ -22,7 +24,7 @@ $('blank plank').split(' ');
 $(['blank','plank']).split('a');
 
 //results in ['bl','nk','pl']
-[/code]
+
 
 Just like in jquery duplicates are removed.
 
@@ -36,11 +38,17 @@ When we write a function for $.fn the this object we get for the function is rea
 In jquery the above function would have been properly written:
 
 $.fn.split=function(arg) {
+
  var retr=[];
+ 
  this.toArray().forEach(function(item) {
+ 
   retr = retr.concat(item.split(arg));
+  
  });
+ 
  return lodash.select(lodash.uniq(retr),function(item){return item;});
+ 
 }
 
 
@@ -52,15 +60,21 @@ The entire insparation for moohlah is that jquery is geared towards html element
 Creating additional instances of the libary whose configurations won't intefer is easy.  As you may have recalled after we used require to load the module we called it as a function. We can do this as many times as we want to create set templates that opperate distinctly.
 
 var moohlah = require('moohlah'),
+
  $ = moohlah(),
+ 
  _ = moohlah();
 
 We also can use this to preregister functions or store template configurations in seperate files.
 
 $ = moohlah(require('./peopleSets.js'));
+
 _ = moohlah({split: function(arg) {return this.split(arg)}
+
             ,print: function() { console.log(this) }
+            
           });
+          
 
 Just for fun
 ------------
@@ -70,26 +84,44 @@ The entire point of this module is to work with graphs.  After this is based on 
 Here's a bit of fun.
           
 function Person() {
+
  this.peopleIKnow;
+ 
 }
+
 
 $Bacon = moohlah();
 
+
 $Bacon.register('peopleKnown',function() {
+
  return this.peopleIKnow;
+ 
 }
 
+
 function baconNumber(person) {
+
  var baconators = $Bacon(person),
+ 
   count=0;
+  
  while(true) {
+ 
   ++c;
+  
   baconators = baconators.peopleKnown();
+  
   if(baconators.toArray().indexOf(kevinBacon) !== -1) {
+  
    return c;
+   
   }
+  
  }
+ 
 }
+
 
 
 
