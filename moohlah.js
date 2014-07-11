@@ -9,8 +9,13 @@ module.exports = $maker = (function(functions) {
   this.array=underscore.select(underscore.uniq(array),function(item){return item;});
  }
  $ = function(input) {
-  //Convert input to array before it is sent to Set constructor
-  return new Set([].concat(input));
+  if(input instanceof Set) {
+   return input;
+  }
+  else {
+   //Convert input to array before it is sent to Set constructor
+   return new Set([].concat(input));
+  }
  }
  //A function for registering functions we can perform on Sets
  //Form of $.register('split',function(arg) {return this.split(arg)});
