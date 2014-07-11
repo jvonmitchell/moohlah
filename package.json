@@ -1,0 +1,32 @@
+{
+  "name": "moohlah.js",
+  "description": "Like JQuery, but works on more than the dom",
+  "version": "0.0.1",
+  "homepage": "http://jvonmitchell.github.io/moohlah/",
+  "author": {
+    "name": "Jason Mitchell",
+    "email": "jvonmitchell@gmail.com",
+    "url": "http://vimque.com"
+  },
+  "main": "moohlah.js",
+  "license": "LGPLv3",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jvonmitchell/moohlah.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jvonmitchell/moohlah/issues"
+  },
+  "keywords": [
+    "jquery",
+    "underscore",
+    "sets",
+    "graph theory",
+    "util"
+  ],
+  "devDependencies": {
+    "underscore": "1.5.2"
+  },
+  "scripts": {
+  }
+}
