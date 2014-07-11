@@ -79,9 +79,9 @@ _ = moohlah({split: function(arg) {return this.split(arg)}
 Just for fun
 ------------
 
-The entire point of this module is to work with graphs.  After this is based on jquery with works with a special kind of graph, the DOM, which is an example of a tree.
+The entire point of this module is to work with graphs.  After all this is based on jquery which works with a special kind of graph, the DOM, which is a simple example of a tree.
 
-Here's a bit of fun.
+Here's a bit of fun:
           
 function Person() {
 
