@@ -1,0 +1,9 @@
+{
+  "name": "moohlah",
+  "version": "0.0.1",
+  "main": "moohlah.js",
+  "ignore": [
+    "**/.*",
+    "node_modules"
+  ]
+}

@@ -1,6 +1,6 @@
 {
-  "name": "moohlah.js",
-  "description": "Like JQuery, but works on more than the dom",
+  "name": "moohlah",
+  "description": "Like JQuery, but works on more than DOM elements",
   "version": "0.0.1",
   "homepage": "http://jvonmitchell.github.io/moohlah/",
   "author": {
