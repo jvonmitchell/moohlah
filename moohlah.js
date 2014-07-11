@@ -1,7 +1,8 @@
 //Depends on underscore to make arrays into sets and to drop empty items
 var underscore = require('underscore');
 
-$=(function() {
+//Calling this function will return the $ library.  You can initiat that instance of the library with a functions list and those functions will be preregistered with that instance of the library.
+module.exports = $maker = (function(functions) {
  //This is the type of object returned by $(..)
  function Set(array) {
   //Remove duplicates and remove empty elements
@@ -25,10 +26,12 @@ $=(function() {
    return new Set(retrArray);
   }
  }
+ if(functions) {
+  Object.keys(functions).forEach(function(funcName) {
+   $.register(funcName,functions[funcName]);
+  });
+ }
  return $;
-})();
-
-//This is an example function
-$.register('split',function(arg) { return this.split(arg)})
+})
 
 
