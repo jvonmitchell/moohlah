@@ -31,11 +31,23 @@ module.exports = $maker = (function(functions) {
    return new Set(retrArray);
   }
  }
+ $.registerDumb = function(funcName,func) {
+  Set.prototype[funcName] = func;
+ }
  if(functions) {
   Object.keys(functions).forEach(function(funcName) {
    $.register(funcName,functions[funcName]);
   });
  }
+ $.registerDumb('toArray',function() {
+  return this.array;
+ });
+ $.registerDumb('sub',function(i) {
+  return this.array[i];
+ }
+ $.registerDumb('length',function() {
+  return this.array.length;
+ });
  return $;
 })
 
