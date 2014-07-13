@@ -57,7 +57,7 @@ module.exports = $maker = (function(functions) {
  });
  $.registerDumb('sub',function(i) {
   return this.array[i];
- }
+ })
  $.registerDumb('length',function() {
   return this.array.length;
  });
