@@ -51,7 +51,7 @@ $.fn.split=function(arg) {
 
 
 Multiple implementations in one program
-=======================================
+---------------------------------------
 
 The entire inspiration for moohlah is that JQuery is geared towards HTML elements and not for other kinds of objects we might work with in an environment like NodeJS.
 
