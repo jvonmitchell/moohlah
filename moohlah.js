@@ -35,9 +35,22 @@ module.exports = $maker = (function(functions) {
   Set.prototype[funcName] = func;
  }
  if(functions) {
-  Object.keys(functions).forEach(function(funcName) {
-   $.register(funcName,functions[funcName]);
-  });
+  if(functions instanceof Function) {
+   functions($);
+  }
+  else {
+   Object.keys(functions).forEach(function(funcName) {
+    if(funcName!=='dumb') {
+     $.register(funcName,functions[funcName]);
+    }
+   });
+   if(functions.dumb) {
+    var dumbs=functions.dumb;
+    Object.keys(dumbs).forEach(function(funcName) {
+     $.registerDumb(funcName,dumbs[funcName]);
+    });
+   }
+  }
  }
  $.registerDumb('toArray',function() {
   return this.array;
