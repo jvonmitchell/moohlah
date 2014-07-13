@@ -9,6 +9,7 @@ Usage
 Basic Usage
 -----------
 
+```javascript
 $ = require('moohlah')();
 
 $.register('split',function(arg) {
@@ -24,6 +25,7 @@ $('blank plank').split(' ');
 $(['blank','plank']).split('a');
 
 //results in ['bl','nk','pl']
+```
 
 
 Just like in jquery duplicates are removed.
@@ -37,6 +39,7 @@ When we write a function for $.fn the this object we get for the function is rea
 
 In jquery the above function would have been properly written:
 
+```javascript
 $.fn.split=function(arg) {
 
  var retr=[];
@@ -50,6 +53,7 @@ $.fn.split=function(arg) {
  return lodash.select(lodash.uniq(retr),function(item){return item;});
  
 }
+```
 
 
 Multiple implementations in one program
@@ -59,14 +63,17 @@ The entire insparation for moohlah is that jquery is geared towards html element
 
 Creating additional instances of the libary whose configurations won't intefer is easy.  As you may have recalled after we used require to load the module we called it as a function. We can do this as many times as we want to create set templates that opperate distinctly.
 
+```javascript
 var moohlah = require('moohlah'),
 
  $ = moohlah(),
  
  _ = moohlah();
+```
 
 We also can use this to preregister functions or store template configurations in seperate files.
 
+```javascript
 $ = moohlah(require('./peopleSets.js'));
 
 _ = moohlah({split: function(arg) {return this.split(arg)}
@@ -74,6 +81,7 @@ _ = moohlah({split: function(arg) {return this.split(arg)}
             ,print: function() { console.log(this) }
             
           });
+```
           
 
 Just for fun
@@ -82,7 +90,8 @@ Just for fun
 The entire point of this module is to work with graphs.  After all this is based on jquery which works with a special kind of graph, the DOM, which is a simple example of a tree.
 
 Here's a bit of fun:
-          
+
+```javascript          
 function Person() {
 
  this.peopleIKnow;
@@ -121,25 +130,4 @@ function baconNumber(person) {
  }
  
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
