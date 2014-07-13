@@ -1,7 +1,7 @@
 moohlah
 =======
 
-Jquery like system for more than just the dom
+JQuery like system for more than just the DOM
 
 Install
 =======
@@ -28,16 +28,16 @@ $(['blank','plank']).split('a');
 ```
 
 
-Just like in jquery duplicates are removed.
+Just like in JQuery duplicates are removed.
 
-How is this different than just using jquery's $.fn.func = ...
+How is this different than just using JQuery's $.fn.func = ...
 
-The behind the scenes of jquery is not as sophisticated as some might suspect.
-The result of every jquery call producing a set with only unique elements is not actually a feature of jquery.  Jquery developers have just done a really good job writing each of the standard functions so that they only return sets.  They have taken the hard way to develop jquery making it more difficult for you to add on to it.
+The behind the scenes of JQuery is not as sophisticated as some might suspect.
+The result of every JQuery call producing a set with only unique elements is not actually a feature of JQuery.  Jquery developers have just done a really good job writing each of the standard functions so that they only return sets.  They have taken the hard way to develop JQuery making it more difficult for you to add on to it.
 
-When we write a function for $.fn the this object we get for the function is really just the list we were working with on the outside.  Jquery doesn't do anything to break the elements up for you, concatenate results, and remove duplicates and empty elements.
+When we write a function for $.fn the this object we get for the function is really just the list we were working with on the outside.  JQuery doesn't do anything to break the elements up for you, concatenate results, and remove duplicates and empty elements.
 
-In jquery the above function would have been properly written:
+In JQuery the above function would have been properly written:
 
 ```javascript
 $.fn.split=function(arg) {
@@ -53,7 +53,7 @@ $.fn.split=function(arg) {
 Multiple implementations in one program
 =======================================
 
-The entire inspiration for moohlah is that jquery is geared towards HTML elements and not for other kinds of objects we might work with in an environment like nodejs.
+The entire inspiration for moohlah is that JQuery is geared towards HTML elements and not for other kinds of objects we might work with in an environment like NodeJS.
 
 Creating additional instances of the library whose configurations won't interfere is easy.  As you may have recalled after we used require to load the module we called it as a function. We can do this as many times as we want to create set templates that operate distinctly.
 
@@ -85,7 +85,7 @@ _ = moohlah({split: function(arg) {return this.split(arg)}
 Just for fun
 ============
 
-The entire point of this module is to work with graphs.  After all this is based on jquery which works with a special kind of graph, the DOM, which is a simple example of a tree.
+The entire point of this module is to work with graphs.  After all this is based on JQuery which works with a special kind of graph, the DOM, which is a simple example of a tree.
 
 Here's a bit of fun:
 
