@@ -1,7 +1,7 @@
 {
   "name": "moohlah",
   "description": "Like JQuery, but works on more than DOM elements",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "homepage": "http://jvonmitchell.github.io/moohlah/",
   "author": {
     "name": "Jason Mitchell",
@@ -24,7 +24,7 @@
     "graph theory",
     "util"
   ],
-  "devDependencies": {
+  "dependencies": {
     "lodash": "2.4.1"
   },
   "scripts": {
