@@ -102,6 +102,10 @@ $Bacon.register('peopleKnown',function() {
  return this.peopleIKnow;
 }
 
+$Bacon.registerDumb('contains',function(lookingFor) {
+ return lodash.cointains(this.toArray(),lookingFor);
+});
+
 
 function baconNumber(person) {
  var baconators = $Bacon(person),
@@ -110,7 +114,7 @@ function baconNumber(person) {
  while(true) {
   ++c;
   baconators = baconators.peopleKnown();
-  if(baconators.toArray().indexOf(kevinBacon) !== -1) {
+  if(baconators.contains(kevinBacon)) {
    return c;
   }
  }
