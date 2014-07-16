@@ -103,7 +103,7 @@ $Bacon.register('peopleKnown',function() {
 }
 
 $Bacon.registerDumb('contains',function(lookingFor) {
- return lodash.cointains(this.toArray(),lookingFor);
+ return lodash.contains(this.toArray(),lookingFor);
 });
 
 
