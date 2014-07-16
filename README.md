@@ -49,6 +49,14 @@ $.fn.split=function(arg) {
 }
 ```
 
+But in Moohlah it's just:
+
+```javascript
+$.register('split',function(arg) {
+ return this.split(arg);
+});
+```
+
 
 Multiple implementations in one program
 ---------------------------------------
