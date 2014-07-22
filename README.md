@@ -57,6 +57,20 @@ $.register('split',function(arg) {
 });
 ```
 
+or
+
+```javascript
+$.register('split',String.prototype.split);
+```
+
+Many more JQuery like features are included and will be included as development continutes.
+
+For example we can add element sets together.
+
+```javascript
+$(['blank','plank']).add('flank stake').split(' ').split('a');
+```
+
 
 Multiple implementations in one program
 ---------------------------------------

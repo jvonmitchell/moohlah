@@ -8,11 +8,17 @@ module.exports = $maker = (function(functions) {
   //Remove duplicates and remove empty elements
   this.array=underscore.select(underscore.uniq(array),function(item){return item;});
  }
+ var handleOnString;
  $ = function(input) {
+  console.log(handleOnString);
   if(input instanceof Set) {
    return input;
   }
   else {
+   //If this is a string and we have a handle for that pass it through the handler.
+   if(handleOnString && typeof input === 'string') {
+    input = handleOnString(input);
+   }
    //Convert input to array before it is sent to Set constructor
    return new Set([].concat(input));
   }
@@ -34,13 +40,16 @@ module.exports = $maker = (function(functions) {
  $.registerDumb = function(funcName,func) {
   Set.prototype[funcName] = func;
  }
+ $.registerStringHandler = function(func) {
+  handleOnString=func;
+ }
  if(functions) {
   if(functions instanceof Function) {
    functions($);
   }
   else {
    Object.keys(functions).forEach(function(funcName) {
-    if(funcName!=='dumb') {
+    if(funcName!=='dumb' && funcName!=='stringHandle') {
      $.register(funcName,functions[funcName]);
     }
    });
@@ -49,6 +58,9 @@ module.exports = $maker = (function(functions) {
     Object.keys(dumbs).forEach(function(funcName) {
      $.registerDumb(funcName,dumbs[funcName]);
     });
+   }
+   if(functions.stringHandle) {
+    handleOnString=functions.stringHandle;
    }
   }
  }
@@ -61,7 +73,11 @@ module.exports = $maker = (function(functions) {
  $.registerDumb('length',function() {
   return this.array.length;
  });
+ $.registerDumb('add',function(additions) {
+  additions=$(additions);
+  return $(this.toArray().concat(additions.toArray()));
+ });
  return $;
-})
+});
 
 
