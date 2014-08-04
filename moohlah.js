@@ -6,11 +6,12 @@ module.exports = $maker = (function(functions) {
  //This is the type of object returned by $(..)
  function Set(array) {
   //Remove duplicates and remove empty elements
-  this.array=underscore.select(underscore.uniq(array),function(item){return item;});
+  this.array=underscore.select(underscore.uniq(array),function(item) {
+   return item || item===0 || item===false || item===NaN;
+  });
  }
  var handleOnString;
  $ = function(input) {
-  console.log(handleOnString);
   if(input instanceof Set) {
    return input;
   }
@@ -30,7 +31,6 @@ module.exports = $maker = (function(functions) {
   Set.prototype[funcName] = function() {
    var args = arguments,
     retrArray = [];
-   console.log('this',this);
    this.array.forEach(function(item) {
     retrArray = retrArray.concat(func.apply(item,args));
    });
