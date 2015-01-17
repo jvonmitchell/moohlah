@@ -43,6 +43,11 @@ module.exports = $maker = (function(functions) {
  $.registerStringHandler = function(func) {
   handleOnString=func;
  }
+ $.registerAllProto = function (proto) {
+  Object.keys(proto).forEach(function(key) {
+   $.register(key,proto[key]);
+  });  
+ }
  if(functions) {
   if(functions instanceof Function) {
    functions($);
